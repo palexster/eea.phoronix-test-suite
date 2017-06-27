@@ -10,8 +10,8 @@ RUN apt-get update \
     && dpkg -i phoronix-test-suite_7.2.0_all.deb \
     && rm -f phoronix-test-suite_7.2.0_all.deb
 # Machine learning benchmarks
-ADD sudo apt-get install
-ADD apt-get install -y libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libboost-all-dev libhdf5-serial-dev protobuf-compiler gcc-4.6 g++-4.6 gcc-4.6-multilib g++-4.6-multilib gfortran libjpeg62 libfreeimage-dev libatlas-base-dev git python-dev python-pip libgflags-dev libgoogle-glog-dev 
+RUN sudo apt-get install
+RUN apt-get install -y libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libboost-all-dev libhdf5-serial-dev protobuf-compiler gcc-4.6 g++-4.6 gcc-4.6-multilib g++-4.6-multilib gfortran libjpeg62 libfreeimage-dev libatlas-base-dev git python-dev python-pip libgflags-dev libgoogle-glog-dev postgresql-contrib
 ADD run.sh /run.sh
 ADD user-config.xml /etc/phoronix-test-suite.xml
 RUN chmod a+x /run.sh
