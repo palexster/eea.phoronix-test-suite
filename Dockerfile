@@ -11,7 +11,7 @@ RUN apt-get update \
     && rm -f phoronix-test-suite_7.2.0_all.deb
 RUN sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9 && sudo apt-get update && sudo apt-get install -y r-base
 RUN sudo apt-get install
-RUN apt-get install -y libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libboost-all-dev libhdf5-serial-dev protobuf-compiler gcc-4.6 g++-4.6 gcc-4.6-multilib g++-4.6-multilib gfortran libjpeg62 libfreeimage-dev libatlas-base-dev git python-dev python-pip libgflags-dev libgoogle-glog-dev postgresql-contrib
+RUN apt-get install -y libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libboost-all-dev libhdf5-serial-dev protobuf-compiler gcc-4.6 g++-4.6 gcc-4.6-multilib g++-4.6-multilib gfortran libjpeg62 libfreeimage-dev libatlas-base-dev git python-dev python-pip libgflags-dev libgoogle-glog-dev postgresql-contrib postgresql 
 ADD run.sh /run.sh
 ADD user-config.xml /etc/phoronix-test-suite.xml
 RUN chmod a+x /run.sh
